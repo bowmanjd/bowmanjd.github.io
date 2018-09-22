@@ -1,0 +1,89 @@
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  height: 100%;
+  margin: 0;
+}
+ul {
+  list-style: none;
+}
+header {
+  align-items: center;
+  background-color: #3d3936;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+}
+header img.logo {
+  flex-shrink: 0;
+  height: 2.5rem;
+  padding: .25rem;
+}
+header .title {
+  flex-shrink: 0;
+  /*
+  font-family: 'Montserrat', sans-serif;
+  */
+  font-size: 1.5rem;
+  font-weight: bolder;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin: .25rem;
+  margin-left: .5rem;
+}
+header .title a {
+  color: white;
+  text-decoration: none;
+}
+header nav {
+  flex: 1 0 auto;
+}
+header .menu {
+  flex-shrink: 0;
+  padding-right: .5rem;
+  position: relative;
+}
+header .menu ul {
+  background-color: #3d3936;
+  padding: 1rem;
+  line-height: 2rem;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  top: 2rem;
+}
+header .menu svg {
+  fill: white;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+header .menu a {
+  color: white;
+  text-decoration: none;
+}
+main {
+  flex: 1 0 auto;
+  margin: 0 1rem;
+}
+footer {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+}
+
+.nonmobile {
+  display: none;
+}
+
+@media all and (min-width: 600px) {
+  .mobile {
+    display: none;
+  }
+
+  .nonmobile {
+    display: inline-block;
+  }
