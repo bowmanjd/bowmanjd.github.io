@@ -1,0 +1,118 @@
+html {
+  height: 100%;
+  font-size: 110%;
+  /*
+  font-size: 2vh;
+  */
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  height: 100%;
+  margin: 0;
+}
+ul {
+  list-style: none;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5vmax;
+}
+footer {
+  align-items: center;
+  background-color: #eee;
+  color: #222;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+}
+footer img.logo {
+  flex-shrink: 0;
+  height: 2.5rem;
+  padding: .5rem;
+}
+footer .title {
+  flex-shrink: 0;
+  /*
+  font-family: 'Montserrat', sans-serif;
+  */
+  font-size: 1.5rem;
+  font-weight: bolder;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin: .25rem;
+  margin-left: .5rem;
+}
+footer .title a {
+  color: white;
+  text-decoration: none;
+}
+footer nav {
+  flex: 1 0 auto;
+}
+footer .menu {
+  flex-shrink: 0;
+  padding-right: .5rem;
+  position: relative;
+}
+footer .menu ul {
+  background-color: #3d3936;
+  padding: 1rem;
+  line-height: 2rem;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  top: 2rem;
+}
+footer .menu a {
+  color: #222;
+  text-decoration: none;
+}
+main {
+  flex: 1 0 auto;
+  margin: 0 1rem;
+}
+main ul {
+  list-style: outside;
+}
+section {
+  display:none;
+}
+
+section.active {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+code {
+  background: #222;
+  color: white;
+  display: inline-block;
+  padding: .25rem;
+  margin: .25rem;
+}
+
+header {
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  color: #222;
+  flex-shrink: 0;
+  font-size: 1.5rem;
+}
+.nonmobile {
+  display: none;
+}
+
+@media all and (min-width: 600px) {
+  .mobile {
+    display: none;
+  }
+
+  .nonmobile {
+    display: inline-block;
+  }
