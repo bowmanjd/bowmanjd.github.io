@@ -7,7 +7,7 @@
   <meta name="author" content="Jonathan Bowman">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/assets/present.css">
-  <script type="text/javascript" src="/assets/present.js" async></script>
+  <script type="module" src="/assets/present.js" defer></script>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
   </header>
   <main>
     <section class="active">
-      <img src="/assets/slide1.jpg" style="height:100%">
+      <h1>bowmanjd.com/ttl/python-data</h1>
     </section>
     <section>
       <h1>Installing Python 3</h1>
@@ -25,11 +25,12 @@
         <li>Windows: <code>scoop install python</code> or <code>choco install python</code></li>
         <li>Linux: <code>apt install python3</code> or <code>dnf install python3</code></li>
         <li>Web: <a href="https://repl.it/languages/python3">repl.it/languages/python3</a></li>
-        <li>You avoid package managers: <a href="https://www.python.org/downloads/">python.org/downloads/</a></li>
+        <li>If you avoid package managers: <a href="https://www.python.org/downloads/">python.org/downloads/</a></li>
       </ul>
     </section>
   </main>
   <footer>
+    <a class="navigation" id="previous" href="#">◀</a>
     <a href="https://candoris.com">
     <img class="logo" src="/assets/candoris_logo.svg">
     </a>
@@ -40,14 +41,15 @@
       </a>
     </div>
     -->
-    <nav>
-    </nav>
-    <div class="menu" id="topmenu_trigger">
-      1/3
-      <ul id="topmenu" style="display: none">
-        <li><a href="/about">About</a></li>
-      </ul>
+    <div class="spacer">
     </div>
+    <div class="menu" id="topmenu_trigger">
+      <select id="current_page">
+      </select>
+      /
+      <span id="total_pages">#</span>
+    </div>
+    <a class="navigation" id="next" href="#">▶</a>
   </footer>
 </body>
 </html>
