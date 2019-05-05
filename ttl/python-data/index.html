@@ -12,35 +12,90 @@
 
 <body>
   <header>
-    Data Wrangling with Python
+    bowmanjd.com/ttl/python-data
   </header>
   <main>
     <section class="active">
-      <h1>bowmanjd.com/ttl/python-data</h1>
+      <h1>Data Wrangling with Python</h1>
+      <p>Presented by Jonathan Bowman</p>
+      <p class="small">Salesforce Project Manager at Candoris</p>
+    </section>
+    <section>
+      <h1>Interruptions welcome</h1>
+    </section>
+    <section>
+      <a href="https://m.xkcd.com/353/">
+      <img src="//imgs.xkcd.com/comics/python.png" title="I wrote 20 short programs in Python yesterday.  It was wonderful.  Perl, I'm leaving you." alt="Python">
+      </a>
+    </section>
+    <section style="text-align:center">
+      <p>When “clicking through” your problems no longer works,</p>
+      <p><a href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers">try Python</a></p>
+      <p>or Powershell, or Javascript, or Ruby, or Go...</p>
+    </section>
+    <section>
+      <a href="https://automatetheboringstuff.com/"><img src="/assets/AutomatetheBoringStuff_cover.png" alt="Automate the Boring Stuff book cover"></a>
+    </section>
+    <section>
+      <p>Should I use Python 2 or 3?</p>
+    </section>
+    <section>
+      <p>Use Python 3.</p>
+      <p>Anything else is just prehistoric nonsense.</p>
+      <p>It is 2019, after all.</p>
+      <p>Python 2.7 <a href="https://pythonclock.org/">will not be maintained after this year</a>.</p> 
     </section>
     <section>
       <h1>Installing Python 3</h1>
       <ul>
-        <li>Mac: <code>brew install python</code></li>
-        <li>Windows: <code>scoop install python</code> or <code>choco install python</code></li>
-        <li>Linux: <code>apt install python3</code> or <code>dnf install python3</code></li>
-        <li>Web: <a href="https://repl.it/languages/python3">repl.it/languages/python3</a></li>
+        <li>Mac: <code><a href="https://brew.sh/">brew</a> install python</code></li>
+        <li>
+          Windows: <code><a href="https://scoop.sh/">scoop</a> install python</code> or
+          <code><a href="https://chocolatey.org/">choco</a> install python</code>
+        </li>
+        <li>
+          Linux: <code><a href="https://www.debian.org/">apt</a>
+          <a href="https://www.ubuntu.com/">install</a> python3</code> or
+          <code><a href="https://getfedora.org/">dnf</a> install python3</code>
+        </li>
+        <li>Web: <a href="https://repl.it/languages/python3">repl.it/languages/python3</a> or <a href="https://www.python.org/shell/">python.org/shell</a></li>
         <li>If you avoid package managers: <a href="https://www.python.org/downloads/">python.org/downloads/</a></li>
       </ul>
     </section>
+    <section>
+      <h1>Python basics</h1>
+    </section>
+    <section>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">greeting</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">greeting</span> <span class="o">+</span> <span class="s2">&quot;, World!&quot;</span>
+
+
+<span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+</pre></div>
+    </section>
+    <section>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">greeting</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">greeting</span> <span class="o">+</span> <span class="s2">&quot;, World!&quot;</span>
+
+
+<span class="n">greet</span><span class="p">()</span>
+</pre></div>
+    </section>
+    <section>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">greeting</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">audience</span><span class="o">=</span><span class="s2">&quot;World&quot;</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">f</span><span class="s2">&quot;</span><span class="si">{greeting}</span><span class="s2">, </span><span class="si">{audience}</span><span class="s2">!&quot;</span>
+
+
+<span class="n">greet</span><span class="p">()</span>
+<span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Salutations&quot;</span><span class="p">,</span> <span class="s2">&quot;Galaxy&quot;</span><span class="p">)</span>
+</pre></div>
+    </section>
   </main>
   <footer>
-    <a class="navigation" id="previous" href="#">◀</a>
+    <a class="navigation" id="previous" href="#">◄</a>
     <a href="https://candoris.com">
     <img class="logo" src="/assets/candoris_logo.svg">
     </a>
-    <!--
-    <div class="title">
-      <a href="/">
-        Data Wrangling with Python
-      </a>
-    </div>
-    -->
     <div class="spacer">
     </div>
     <div class="menu" id="topmenu_trigger">
@@ -49,7 +104,7 @@
       /
       <span id="total_pages">#</span>
     </div>
-    <a class="navigation" id="next" href="#">▶</a>
+    <a class="navigation" id="next" href="#">►</a>
   </footer>
 </body>
 </html>

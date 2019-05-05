@@ -68,8 +68,8 @@ function previous(e) {
   return false;
 }
 
-parse_hash();
 total_pages();
+parse_hash();
 
 window.addEventListener('hashchange', parse_hash);
 page_selector.addEventListener('change', function() {
