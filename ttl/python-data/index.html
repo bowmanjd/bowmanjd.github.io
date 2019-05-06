@@ -82,14 +82,35 @@
 </pre></div>
     </section>
     <section>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">greeting</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">audience</span><span class="o">=</span><span class="s2">&quot;World&quot;</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">f</span><span class="s2">&quot;</span><span class="si">{greeting}</span><span class="s2">, </span><span class="si">{audience}</span><span class="s2">!&quot;</span>
+<div class="highlight">
+<pre><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">greeting</span><span class="o">=</span><span class="s2">"Hello"</span><span class="p">,</span> <span class="n">audience</span><span class="o">=</span><span class="s2">"World"</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">f</span><span class="s2">"</span><span class="si">{greeting}</span><span class="s2">, </span><span class="si">{audience}</span><span class="s2">!"</span>
 
 
 <span class="n">greet</span><span class="p">()</span>
-<span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Salutations&quot;</span><span class="p">,</span> <span class="s2">&quot;Galaxy&quot;</span><span class="p">)</span>
+<span class="n">greet</span><span class="p">(</span><span class="s2">"Salutations"</span><span class="p">,</span> <span class="s2">"Galaxy"</span><span class="p">)</span>
+<span class="n">greet</span><span class="p">(</span><span class="n">audience</span><span class="o">=</span><span class="s2">"Galaxy"</span><span class="p">)</span>
 </pre></div>
-    </section>
+  </section>
+  <section>
+<div class="highlight">
+<pre><span class="n">a_number</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">another_number</span> <span class="o">=</span> <span class="mf">7.1</span>
+<span class="n">a_string</span> <span class="o">=</span> <span class="s2">"Some text"</span>
+<span class="n">another_string</span> <span class="o">=</span> <span class="s2">"Some more text"</span>
+<span class="n">a_range</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Some text"</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="n">another_number</span><span class="p">,</span> <span class="s2">"的"</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+  </section>
+  <section>
+<div class="highlight">
+<pre><span class="n">a_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"a_key"</span><span class="p">:</span> <span class="s2">"a_value"</span><span class="p">,
+         </span> <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Sheila"</span><span class="p">,
+         </span> <span class="s2">"pi"</span><span class="p">:</span> <span class="mf">3.14159</span><span class="p">}</span>
+
+<span class="n">archimedes_constant</span> <span class="o">=</span> <span class="n">a_dict</span><span class="p">[</span><span class="s2">"pi"</span><span class="p">]</span>
+</pre></div>
+  </section>
   </main>
   <footer>
     <a class="navigation" id="previous" href="#">◄</a>
