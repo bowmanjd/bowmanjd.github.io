@@ -81,7 +81,9 @@ main {
   margin: 0 1rem;
 }
 main ul {
-  list-style: outside;
+  list-style: inside;
+  margin: 0;
+  padding: 0;
 }
 
 section {
@@ -90,6 +92,7 @@ section {
 
 section img {
   max-height: 75vh;
+  min-height: 75vh;
   max-width: 100vw;
 }
 
