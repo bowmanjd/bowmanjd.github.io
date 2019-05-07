@@ -1,151 +1,229 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Data Wrangling with Python</title>
-  <meta name="description" content="Content by Jonathan Bowman">
-  <meta name="author" content="Jonathan Bowman">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/assets/present.css">
-  <link rel="stylesheet" href="/assets/pygments-tango.css">
-  <script type="module" src="/assets/present.js" defer></script>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Data Wrangling with Python</title>
+    <meta name="description" content="Content by Jonathan Bowman" />
+    <meta name="author" content="Jonathan Bowman" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/present.css" />
+    <link rel="stylesheet" href="/assets/pygments-tango.css" />
+    <script type="module" src="/assets/present.js" defer></script>
+  </head>
 
-<body>
-  <header>
-    bowmanjd.com/ttl/python-data
-  </header>
-  <main>
-    <section class="active">
-      <h1>Data Wrangling with Python</h1>
-      <p>Presented by Jonathan Bowman</p>
-      <p class="small">Salesforce Project Manager at Candoris</p>
-    </section>
-    <section>
-      <h1>Interruptions welcome</h1>
-    </section>
-    <section>
-      <a href="https://m.xkcd.com/353/">
-      <img src="//imgs.xkcd.com/comics/python.png" title="I wrote 20 short programs in Python yesterday.  It was wonderful.  Perl, I'm leaving you." alt="Python">
-      </a>
-    </section>
-    <section style="text-align:center">
-      <p>When “clicking through” your problems no longer works,</p>
-      <p><a href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers">try Python</a></p>
-      <p>or Powershell, or Javascript, or Ruby, or Go...</p>
-    </section>
-    <section>
-      <a href="https://automatetheboringstuff.com/"><img src="/assets/AutomatetheBoringStuff_cover.png" alt="Automate the Boring Stuff book cover"></a>
-    </section>
-    <section>
-      <ul>
-        <li>
-          <a href="https://docs.python.org/3/">Official documentation</a>, including <a href="http://docs.python.org/tutorial/index.html">the tutorial</a>.
-        </li>
-        <li>
-          <a href="https://docs.python-guide.org/">The Hitchhiker's Guide to Python</a>, including a <a href="https://docs.python-guide.org/intro/learning/">great summary of learning resources</a>
-        </li>
-        <li>
-          <a href="https://learnpythonthehardway.org/python3/">Learn Python the Hard Way</a>
-        </li>
-        <li>
-          <a href="https://realpython.com/">Tutorials at Real Python</a>
-        </li>
-        <li>
-          The <a href="https://awesome-python.com/">Awesome Python</a> list
-        </li>
-        <li>
-          <a href="https://stackoverflow.com/questions/tagged/python">Stack Overflow!</a>
-        </li>
-      </ul>
-    </section>
-    <section>
-      <p>Should I use Python 2 or 3?</p>
-    </section>
-    <section>
-      <p>Use Python 3.</p>
-      <p>Anything else is just prehistoric nonsense.</p>
-      <p>It is 2019, after all.</p>
-      <p>Python 2.7 <a href="https://pythonclock.org/">will not be maintained after this year</a>.</p> 
-    </section>
-    <section>
-      <ul>
-        <li>Mac: <code><a href="https://brew.sh/">brew</a> install python</code></li>
-        <li>Windows: <code><a href="https://scoop.sh/">scoop</a> install python</code> or
-          <code><a href="https://chocolatey.org/">choco</a> install python</code>
-        </li>
-        <li>Linux: <code><a href="https://www.debian.org/">apt</a>
-          <a href="https://www.ubuntu.com/">install</a> python3</code> or
-          <code><a href="https://getfedora.org/">dnf</a> install python3</code>
-        </li>
-        <li>Web: <a href="https://repl.it/languages/python3">repl.it/languages/python3</a> or <a href="https://www.python.org/shell/">python.org/shell</a></li>
-        <li>If you avoid package managers: <a href="https://www.python.org/downloads/">python.org/downloads/</a></li>
-        <li>iOS: <a href="https://itunes.apple.com/us/app/pythonista-3/id1085978097">Pythonista</a></li>
-        <li>Android: <a href="https://play.google.com/store/apps/details?id=com.termux">Termux</a> and <code>pkg install python</code></li>
-        <li>ChromeOS: <a href="https://play.google.com/store/apps/details?id=com.termux">Termux</a> or Linux Terminal
-      </ul>
-    </section>
-    <section>
-      <h1>Python basics</h1>
-    </section>
-    <section>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">greeting</span><span class="p">):</span>
+  <body>
+    <header>
+      bowmanjd.com/ttl/python-data
+    </header>
+    <main>
+      <section class="active">
+        <h1>Data Wrangling with Python</h1>
+        <p>Presented by Jonathan Bowman</p>
+        <p class="small">Salesforce Project Manager at Candoris</p>
+      </section>
+      <section>
+        <h1>Interruptions welcome</h1>
+      </section>
+      <section>
+        <a href="https://m.xkcd.com/353/">
+          <img
+            src="//imgs.xkcd.com/comics/python.png"
+            title="I wrote 20 short programs in Python yesterday.  It was wonderful.  Perl, I'm leaving you."
+            alt="Python"
+          />
+        </a>
+      </section>
+      <section style="text-align:center">
+        <p>When “clicking through” your problems no longer works,</p>
+        <p>
+          <a href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers"
+            >try Python</a
+          >
+        </p>
+        <p>or Powershell, or Javascript, or Ruby, or Go...</p>
+      </section>
+      <section>
+        <a href="https://automatetheboringstuff.com/"
+          ><img
+            src="/assets/AutomatetheBoringStuff_cover.png"
+            alt="Automate the Boring Stuff book cover"
+        /></a>
+      </section>
+      <section>
+        <ul>
+          <li>
+            <a href="https://docs.python.org/3/">Official documentation</a>,
+            including
+            <a href="http://docs.python.org/tutorial/index.html">the tutorial</a
+            >.
+          </li>
+          <li>
+            <a href="https://docs.python-guide.org/"
+              >The Hitchhiker's Guide to Python</a
+            >, including a
+            <a href="https://docs.python-guide.org/intro/learning/"
+              >great summary of learning resources</a
+            >
+          </li>
+          <li>
+            <a href="https://learnpythonthehardway.org/python3/"
+              >Learn Python the Hard Way</a
+            >
+          </li>
+          <li>
+            <a href="https://realpython.com/">Tutorials at Real Python</a>
+          </li>
+          <li>
+            The <a href="https://awesome-python.com/">Awesome Python</a> list
+          </li>
+          <li>
+            <a href="https://stackoverflow.com/questions/tagged/python"
+              >Stack Overflow!</a
+            >
+          </li>
+        </ul>
+      </section>
+      <section>
+        <p>Should I use Python 2 or 3?</p>
+      </section>
+      <section>
+        <p>Use Python 3.</p>
+        <p>Anything else is just prehistoric nonsense.</p>
+        <p>It is 2019, after all.</p>
+        <p>
+          Python 2.7
+          <a href="https://pythonclock.org/"
+            >will not be maintained after this year</a
+          >.
+        </p>
+      </section>
+      <section>
+        <ul>
+          <li>
+            Mac: <code><a href="https://brew.sh/">brew</a> install python</code>
+          </li>
+          <li>
+            Windows:
+            <code><a href="https://scoop.sh/">scoop</a> install python</code> or
+            <code
+              ><a href="https://chocolatey.org/">choco</a> install python</code
+            >
+          </li>
+          <li>
+            Linux:
+            <code
+              ><a href="https://www.debian.org/">apt</a>
+              <a href="https://www.ubuntu.com/">install</a> python3</code
+            >
+            or
+            <code
+              ><a href="https://getfedora.org/">dnf</a> install python3</code
+            >
+          </li>
+          <li>
+            Web:
+            <a href="https://repl.it/languages/python3"
+              >repl.it/languages/python3</a
+            >
+            or <a href="https://www.python.org/shell/">python.org/shell</a>
+          </li>
+          <li>
+            If you avoid package managers:
+            <a href="https://www.python.org/downloads/"
+              >python.org/downloads/</a
+            >
+          </li>
+          <li>
+            iOS:
+            <a href="https://itunes.apple.com/us/app/pythonista-3/id1085978097"
+              >Pythonista</a
+            >
+          </li>
+          <li>
+            Android:
+            <a href="https://play.google.com/store/apps/details?id=com.termux"
+              >Termux</a
+            >
+            and <code>pkg install python</code>
+          </li>
+          <li>
+            ChromeOS:
+            <a href="https://play.google.com/store/apps/details?id=com.termux"
+              >Termux</a
+            >
+            or Linux Terminal
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>Python basics</h1>
+      </section>
+      <section>
+        <div class="highlight">
+          <pre><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">greeting</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">greeting</span> <span class="o">+</span> <span class="s2">&quot;, World!&quot;</span>
 
 
 <span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
-</pre></div>
-    </section>
-    <section>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">greeting</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">):</span>
+</pre>
+        </div>
+      </section>
+      <section>
+        <div class="highlight">
+          <pre><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">greeting</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">greeting</span> <span class="o">+</span> <span class="s2">&quot;, World!&quot;</span>
 
 
 <span class="n">greet</span><span class="p">()</span>
-</pre></div>
-    </section>
-    <section>
-<div class="highlight">
-<pre><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">greeting</span><span class="o">=</span><span class="s2">"Hello"</span><span class="p">,</span> <span class="n">audience</span><span class="o">=</span><span class="s2">"World"</span><span class="p">):</span>
+</pre>
+        </div>
+      </section>
+      <section>
+        <div class="highlight">
+          <pre><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">greeting</span><span class="o">=</span><span class="s2">"Hello"</span><span class="p">,</span> <span class="n">audience</span><span class="o">=</span><span class="s2">"World"</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">f</span><span class="s2">"</span><span class="si">{greeting}</span><span class="s2">, </span><span class="si">{audience}</span><span class="s2">!"</span>
 
 
 <span class="n">greet</span><span class="p">()</span>
 <span class="n">greet</span><span class="p">(</span><span class="s2">"Salutations"</span><span class="p">,</span> <span class="s2">"Galaxy"</span><span class="p">)</span>
 <span class="n">greet</span><span class="p">(</span><span class="n">audience</span><span class="o">=</span><span class="s2">"Galaxy"</span><span class="p">)</span>
-</pre></div>
-  </section>
-  <section>
-<div class="highlight">
-<pre><span class="n">a_number</span> <span class="o">=</span> <span class="mi">12</span>
+</pre>
+        </div>
+      </section>
+      <section>
+        <div class="highlight">
+          <pre><span class="n">a_number</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="n">another_number</span> <span class="o">=</span> <span class="mf">7.1</span>
 <span class="n">a_string</span> <span class="o">=</span> <span class="s2">"Some text"</span>
 <span class="n">another_string</span> <span class="o">=</span> <span class="s2">"Some more text"</span>
 <span class="n">a_range</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Some text"</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="n">another_number</span><span class="p">,</span> <span class="s2">"的"</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">a_lonely_number</span> <span class="o">=</span> <span class="n">a_list</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
-</pre></div>
-  </section>
-  <section>
-<div class="highlight">
-<pre><span class="n">a_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"a_key"</span><span class="p">:</span> <span class="s2">"a_value"</span><span class="p">,
+</pre>
+        </div>
+      </section>
+      <section>
+        <div class="highlight">
+          <pre><span class="n">a_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"a_key"</span><span class="p">:</span> <span class="s2">"a_value"</span><span class="p">,
          </span> <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"Sheila"</span><span class="p">,
          </span> <span class="s2">"pi"</span><span class="p">:</span> <span class="mf">3.14159</span><span class="p">}</span>
 
 <span class="n">archimedes_constant</span> <span class="o">=</span> <span class="n">a_dict</span><span class="p">[</span><span class="s2">"pi"</span><span class="p">]</span>
-</pre></div>
-  </section>
-  <section>
-<div class="highlight">
-<pre><span class="k">def</span> <span class="nf">list_random_numbers</span><span class="p">(</span><span class="n">quantity</span><span class="p">,</span> <span class="n">maximum</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+</pre>
+        </div>
+      </section>
+      <section>
+        <div class="highlight">
+          <pre><span class="k">def</span> <span class="nf">list_random_numbers</span><span class="p">(</span><span class="n">quantity</span><span class="p">,</span> <span class="n">maximum</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">possible</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">maximum</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">quantity</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">possible</span><span class="p">))</span>
-</pre></div>
-  </section>
-  <section>
-<div class="highlight">
-<pre><span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</pre>
+        </div>
+      </section>
+      <section>
+        <div class="highlight">
+          <pre><span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"equality"</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
@@ -154,32 +232,35 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">"greater than"</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"less than or equal"</span><span class="p">)</span>
-</pre></div>
-  </section>
-  <section>
-    <h1>File handling</h1>
-  </section>
-  <section>
-<div class="highlight">
-<pre><span class="k">def</span> <span class="nf">print_file</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"sample.csv"</span><span class="p">):</span>
+</pre>
+        </div>
+      </section>
+      <section>
+        <h1>File handling</h1>
+      </section>
+      <section>
+        <div class="highlight">
+          <pre><span class="k">def</span> <span class="nf">print_file</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"sample.csv"</span><span class="p">):</span>
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
     <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
     <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-  </section>
-  <section>
-<div class="highlight">
-<pre><span class="k">def</span> <span class="nf">walk_file</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"sample.csv"</span><span class="p">):</span>
+</pre>
+        </div>
+      </section>
+      <section>
+        <div class="highlight">
+          <pre><span class="k">def</span> <span class="nf">walk_file</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"sample.csv"</span><span class="p">):</span>
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
         <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-  </section>
-  <section>
-<div class="highlight">
-<pre><span class="k">def</span> <span class="nf">write_new_file</span><span class="p">(</span><span class="n">infilename</span><span class="o">=</span><span class="s2">"sample.csv"</span><span class="p">,</span>
+</pre>
+        </div>
+      </section>
+      <section>
+        <div class="highlight">
+          <pre><span class="k">def</span> <span class="nf">write_new_file</span><span class="p">(</span><span class="n">infilename</span><span class="o">=</span><span class="s2">"sample.csv"</span><span class="p">,</span>
                    <span class="n">outfilename</span><span class="o">=</span><span class="s2">"output.csv"</span><span class="p">):</span>
     <span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">infilename</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span>
     <span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfilename</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span>
@@ -189,52 +270,107 @@
     <span class="n">infile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">outfilename</span>
-</pre></div>
-  </section>
-  <section>
-    <ul>
-      <p>Common data formats</p>
-      <li>CSV</li>
-      <li>JSON</li>
-    </ul>
-  </section>
-  <section>
-    <ul>
-      <p>Common transport methods</p>
-      <li>HTTP</li>
-      <li>SFTP</li>
-    </ul>
-  </section>
-  <section>
-    <p>Let's share some data wrangling scenarios.</p>
-    <p>And do some HTTP calls to <a href="https://ttl2019.bowmanjd.com/__repl">a REST API</a>.</p>
-  </section>
-  <section>
-    <p>Our mild-mannered REST API has one endpoint: <code>https://ttl2019.bowmanjd.com/responses</code> that accepts either GET or POST methods</p>
-    <ul>
-      <li>HTTP GET will yield a JSON list</li>
-      <li>HTTP POST (with a JSON payload) will add an item or list of items to the list</li>
-    </ul>
-    <p>(No authentication is required, unlike any self-respecting REST API you will encounter in the wild.)</p>
-  </section>
-  <section>
-    <img src="/assets/rabbit.jpg">
-  </section>
-  </main>
-  <footer>
-    <a class="navigation" id="previous" href="#">◄</a>
-    <a href="https://candoris.com">
-    <img class="logo" src="/assets/candoris_logo.svg">
-    </a>
-    <div class="spacer">
-    </div>
-    <div class="menu" id="topmenu_trigger">
-      <select id="current_page">
-      </select>
-      /
-      <span id="total_pages">#</span>
-    </div>
-    <a class="navigation" id="next" href="#">►</a>
-  </footer>
-</body>
+</pre>
+        </div>
+      </section>
+      <section>
+        <ul>
+          <p>Common data formats</p>
+          <li>CSV</li>
+          <li>JSON</li>
+        </ul>
+      </section>
+      <section>
+        <ul>
+          <p>Common transport methods</p>
+          <li>HTTP</li>
+          <li>SFTP</li>
+        </ul>
+      </section>
+      <section>
+        <p>Let's share some data wrangling scenarios.</p>
+        <p>
+          And do some HTTP calls to
+          <a href="https://ttl2019.bowmanjd.com/__repl">a REST API</a>.
+        </p>
+      </section>
+      <section>
+        <p>
+          Our mild-mannered REST API has one endpoint:
+          <code>https://ttl2019.bowmanjd.com/responses</code> that accepts
+          either GET or POST methods
+        </p>
+        <ul>
+          <li>HTTP GET will yield a JSON list</li>
+          <li>
+            HTTP POST (with a JSON payload) will add an item or list of items to
+            the list
+          </li>
+        </ul>
+        <p>
+          (No authentication is required, unlike any self-respecting REST API
+          you will encounter in the wild.)
+        </p>
+      </section>
+      <section>
+        <a href="https://docs.python.org/3/library/subprocess.html"
+          ><img src="/assets/rabbit.jpg" alt="Rabbit trail to subprocess"
+        /></a>
+      </section>
+      <section>
+        <div class="highlight">
+          <pre><span class="kn">from</span> <span class="nn">subprocess</span> <span class="k">import</span> <span class="n">check_output</span>
+
+<span class="k">def</span> <span class="nf">show_kernel_info</span><span class="p">():</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"uname"</span><span class="p">,</span> <span class="s2">"-a"</span><span class="p">]</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">check_output</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">output</span>
+</pre>
+        </div>
+      </section>
+      <section>
+        <div class="highlight">
+          <pre><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">subprocess</span> <span class="k">import</span> <span class="n">check_output</span>
+
+<span class="k">def</span> <span class="nf">list_responses</span><span class="p">():</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"curl"</span><span class="p">,</span>
+           <span class="s2">"https://ttl2019.bowmanjd.com/responses"</span><span class="p">]</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">check_output</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+    <span class="n">responses</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">responses</span>
+</pre>
+        </div>
+      </section>
+      <section>
+        <img src="/assets/bunny.jpg" alt="Return from rabbit trail" />
+      </section>
+      <section>
+        <div class="highlight">
+          <pre><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">endpoint</span> <span class="o">=</span> <span class="s2">"https://ttl2019.bowmanjd.com/responses"</span>
+
+<span class="k">def</span> <span class="nf">list_responses</span><span class="p">():</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">endpoint</span><span class="p">)</span>
+    <span class="n">responses</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">responses</span>
+</pre>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="navigation" id="previous" href="#">◄</a>
+      <a href="https://candoris.com">
+        <img class="logo" src="/assets/candoris_logo.svg" alt="candoris" />
+      </a>
+      <div class="spacer"></div>
+      <div class="menu" id="topmenu_trigger">
+        <select id="current_page"> </select>
+        /
+        <span id="total_pages">#</span>
+      </div>
+      <a class="navigation" id="next" href="#">►</a>
+    </footer>
+  </body>
 </html>
