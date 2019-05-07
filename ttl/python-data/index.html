@@ -7,6 +7,7 @@
   <meta name="author" content="Jonathan Bowman">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/assets/present.css">
+  <link rel="stylesheet" href="/assets/pygments-tango.css">
   <script type="module" src="/assets/present.js" defer></script>
 </head>
 
@@ -133,6 +134,91 @@
 
 <span class="n">archimedes_constant</span> <span class="o">=</span> <span class="n">a_dict</span><span class="p">[</span><span class="s2">"pi"</span><span class="p">]</span>
 </pre></div>
+  </section>
+  <section>
+<div class="highlight">
+<pre><span class="k">def</span> <span class="nf">list_random_numbers</span><span class="p">(</span><span class="n">quantity</span><span class="p">,</span> <span class="n">maximum</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">possible</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">maximum</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">quantity</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">possible</span><span class="p">))</span>
+</pre></div>
+  </section>
+  <section>
+<div class="highlight">
+<pre><span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"equality"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"inequality"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"greater than"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"less than or equal"</span><span class="p">)</span>
+</pre></div>
+  </section>
+  <section>
+    <h1>File handling</h1>
+  </section>
+  <section>
+<div class="highlight">
+<pre><span class="k">def</span> <span class="nf">print_file</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"sample.csv"</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+  </section>
+  <section>
+<div class="highlight">
+<pre><span class="k">def</span> <span class="nf">walk_file</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"sample.csv"</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+  </section>
+  <section>
+<div class="highlight">
+<pre><span class="k">def</span> <span class="nf">write_new_file</span><span class="p">(</span><span class="n">infilename</span><span class="o">=</span><span class="s2">"sample.csv"</span><span class="p">,</span>
+                   <span class="n">outfilename</span><span class="o">=</span><span class="s2">"output.csv"</span><span class="p">):</span>
+    <span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">infilename</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span>
+    <span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfilename</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">"Teacher"</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+            <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="n">infile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">outfilename</span>
+</pre></div>
+  </section>
+  <section>
+    <ul>
+      <p>Common data formats</p>
+      <li>CSV</li>
+      <li>JSON</li>
+    </ul>
+  </section>
+  <section>
+    <ul>
+      <p>Common transport methods</p>
+      <li>HTTP</li>
+      <li>SFTP</li>
+    </ul>
+  </section>
+  <section>
+    <p>Let's share some data wrangling scenarios.</p>
+    <p>And do some HTTP calls to <a href="https://ttl2019.bowmanjd.com/__repl">a REST API</a>.</p>
+  </section>
+  <section>
+    <p>Our mild-mannered REST API has one endpoint: <code>https://ttl2019.bowmanjd.com/responses</code> that accepts either GET or POST methods</p>
+    <ul>
+      <li>HTTP GET will yield a JSON list</li>
+      <li>HTTP POST (with a JSON payload) will add an item or list of items to the list</li>
+    </ul>
+    <p>(No authentication is required, unlike any self-respecting REST API you will encounter in the wild.)</p>
+  </section>
+  <section>
+    <img src="/assets/rabbit.jpg">
   </section>
   </main>
   <footer>
