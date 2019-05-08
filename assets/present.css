@@ -64,7 +64,7 @@ footer .title a {
   color: white;
   text-decoration: none;
 }
-footer .spacer {
+.spacer {
   flex: 1 0 auto;
 }
 footer .menu {
@@ -115,11 +115,21 @@ code a {
 }
 
 header {
+  align-items: center;
+  color: #56873d;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
   background-color: white;
   border-bottom: 1px solid #eee;
-  color: #222;
-  flex-shrink: 0;
-  font-size: 1.2rem;
+  font-size: 2.5vmax;
+}
+header a {
+  color: #56873d;
+  text-decoration: none;
+}
+main a {
+  text-decoration: none;
 }
 .nonmobile {
   display: none;

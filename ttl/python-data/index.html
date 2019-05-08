@@ -7,18 +7,25 @@
     <meta name="author" content="Jonathan Bowman" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/assets/present.css" />
-    <link rel="stylesheet" href="/assets/pygments-tango.css" />
+    <link rel="stylesheet" href="/assets/pygments-monokai.css" />
     <script type="module" src="/assets/present.js" defer></script>
   </head>
 
   <body>
     <header>
-      bowmanjd.com/ttl/python-data
+      <a href="https://github.com/bowmanjd/ttl2019">GitHub</a>
+      <div class="spacer"></div>
+      <a href="#1">bowmanjd.com/ttl/python-data</a>
+      <div class="spacer"></div>
+      <a href="https://repl.it/@jonathanbowman/ttl2019">repl.it</a>
     </header>
     <main>
       <section class="active">
         <h1>Data Wrangling with Python</h1>
-        <p>Presented by Jonathan Bowman</p>
+        <p>
+          Presented by Jonathan Bowman<br />
+          <a href="mailto:jbowman@candoris.com">jbowman@candoris.com</a>
+        </p>
         <p class="small">Salesforce Project Manager at Candoris</p>
       </section>
       <section>
@@ -41,6 +48,9 @@
           >
         </p>
         <p>or Powershell, or Javascript, or Ruby, or Go...</p>
+      </section>
+      <section>
+        <h1>Documentation</h1>
       </section>
       <section>
         <a href="https://automatetheboringstuff.com/"
@@ -84,7 +94,7 @@
         </ul>
       </section>
       <section>
-        <p>Should I use Python 2 or 3?</p>
+        <h1>Should I use Python 2 or 3?</h1>
       </section>
       <section>
         <ul>
@@ -97,6 +107,9 @@
             >.
           </li>
         </ul>
+      </section>
+      <section>
+        <h1>Installing Python</h1>
       </section>
       <section>
         <ul>
@@ -141,18 +154,11 @@
             >
           </li>
           <li>
-            Android:
+            Android and ChromeOS:
             <a href="https://play.google.com/store/apps/details?id=com.termux"
               >Termux</a
             >
             and <code>pkg install python</code>
-          </li>
-          <li>
-            ChromeOS:
-            <a href="https://play.google.com/store/apps/details?id=com.termux"
-              >Termux</a
-            >
-            or Linux Terminal
           </li>
         </ul>
       </section>
@@ -328,9 +334,8 @@ Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&
       </section>
       <section>
         <p>
-          Our mild-mannered REST API has one endpoint:
-          <code>https://ttl2019.bowmanjd.com/responses</code> that accepts
-          either GET or POST methods
+          Our mild-mannered REST API has one endpoint:<br />
+          <code>https://ttl2019.bowmanjd.com/responses</code>
         </p>
         <ul>
           <li>HTTP GET will yield a JSON list</li>
@@ -389,6 +394,121 @@ Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&
     <span class="k">return</span> <span class="n">responses</span>
 </pre>
         </div>
+      </section>
+      <section>
+        <div class="highlight">
+          <pre><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">endpoint</span> <span class="o">=</span> <span class="s2">"https://ttl2019.bowmanjd.com/responses"</span>
+
+<span class="k">def</span> <span class="nf">add_response</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">response</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">count</span>
+</pre>
+        </div>
+      </section>
+      <section>
+        <p>What data wrangling scenarios do/could you face?</p>
+        <p>
+          POST your response(s), and feel free to GET everyone else’s, using
+          Python.
+        </p>
+      </section>
+      <section>
+        <div class="highlight">
+          <pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;sample.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span>
+              <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;First name&quot;</span><span class="p">])</span>
+</pre>
+        </div>
+      </section>
+      <section>
+        <div class="highlight">
+          <pre><span></span><span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;output.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span>
+               <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span>
+                        <span class="p">[</span><span class="s2">&quot;First&quot;</span><span class="p">,</span> <span class="s2">&quot;Last&quot;</span><span class="p">])</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">writeheader</span><span class="p">()</span>
+<span class="n">new_row</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;First&quot;</span><span class="p">:</span> <span class="s2">&quot;Jonathan&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Last&quot;</span><span class="p">:</span> <span class="s2">&quot;Bowman&quot;</span><span class="p">}</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">new_row</span><span class="p">)</span>
+</pre>
+        </div>
+      </section>
+      <section>
+        <p>
+          For SSH and SFTP work, try
+          <a href="http://www.paramiko.org/">Paramiko</a>.
+        </p>
+      </section>
+      <section>
+        <h1>Data ninja stuff</h1>
+        <ul>
+          <li><a href="https://pandas.pydata.org/">Pandas</a></li>
+          <li><a href="http://docs.dask.org">Dask</a></li>
+          <li><a href="https://jupyter.org/">Jupyter Notebooks</a></li>
+        </ul>
+      </section>
+      <section>
+        <h1>Networking</h1>
+        <ul>
+          <li>
+            <a href="https://pynet.twb-tech.com/"
+              >Python for Network Engineers</a
+            >
+          </li>
+          <li>
+            <a href="https://pynet.twb-tech.com/blog/automation/netmiko.html"
+              >Netmiko</a
+            >: switch management
+          </li>
+          <li>
+            <a href="https://napalm.readthedocs.io/">Napalm</a>: network
+            automation
+          </li>
+          <li>
+            <a href="https://nornir.readthedocs.io">Nornir</a>: automate
+            everything
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>Server management</h1>
+        <ul>
+          <li><a href="https://docs.saltstack.com">Salt</a></li>
+          <li><a href="https://docs.ansible.com">Ansible</a></li>
+          <li><a href="https://nornir.readthedocs.io">Nornir</a></li>
+        </ul>
+      </section>
+      <section>
+        <h1>Hypervisor management</h1>
+        <ul>
+          <li>
+            <a href="https://github.com/vmware/vsphere-automation-sdk-python"
+              >vSphere Automation SDK</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/vmware/pyvmomi"
+              >VMware vSphere API Python Bindings</a
+            >
+          </li>
+          <li>
+            For Hyper-V:
+            <a href="https://github.com/diyan/pywinrm">pywinrm</a> WinRM client
+          </li>
+          <li>
+            For Hyper-V:
+            <a href="https://github.com/jborean93/pypsrp">pypsrp</a> PowerShell
+            Remoting
+          </li>
+        </ul>
       </section>
     </main>
     <footer>
